@@ -1,6 +1,5 @@
 function getDogImage () {
-    let numberOfImages= $('input[type="number"]').val();
-    fetch('https://dog.ceo/api/breeds/image/random/')
+    fetch('https://dog.ceo/api/breeds/image/random/3')
         .then(response => response.json())
         .then(responseJson => console.log(responseJson))
         .catch(error => alert ('Something went wrong. Try again later'));
@@ -11,7 +10,8 @@ function getDogImage () {
 function onSubmit () {
     $('form').on('submit', event => {
         event.preventDefault();
-        let numberOfImages = $('input[type="number"]').val();       
+        let numberOfImages = $('input[type="number"]').val(); 
+        console.log(numberOfImages);      
         getDogImage(numberOfImages);
     })
 }
@@ -26,7 +26,6 @@ function displayImages(responseJson) {
 
 function handler() {
     onSubmit();
-    getDogImage();
 }
 
 handler();
