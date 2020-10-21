@@ -26,6 +26,7 @@ function displayImages(responseJson) {
 
 function handler() {
     onSubmit();
+    getDogImage();
 }
 
 handler();
