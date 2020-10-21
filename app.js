@@ -11,7 +11,7 @@ function onSubmit () {
     $('form').on('submit', event => {
         let images = $('input type="number"').val();
         event.preventDefault();   
-        getDogImage(images);  
+        getDogImage();  
     })
 }
 
