@@ -9,16 +9,14 @@ function getDogImage (images) {
 
 function onSubmit () {
     $('form').on('submit', event => {
-        let images = $('input type="number"').val();
-        event.preventDefault();   
-        getDogImage();  
+        event.preventDefault();
+        let images = $('input [type="radio"]').val();   
+        getDogImage(images);  
     })
 }
 
-function displayImages() {
-    $('.img-result').replaceWith(   
-    '<img src="${responseJson}" class="img-result">'
-    )
+function displayImages(responseJson) {
+    console.log(responseJson);
     $('.results').removeClass('hidden');
 
 }
