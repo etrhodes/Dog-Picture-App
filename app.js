@@ -9,12 +9,13 @@ function getDogImage (images) {
 
 function onSubmit () {
     $('form').on('submit', event => {
+        let images = $('input type="number"').val();
         event.preventDefault();   
-        getDogImage();  
+        getDogImage(images);  
     })
 }
 
-function displayImages(responseJson) {
+function displayImages() {
     $('.img-result').replaceWith(   
     '<img src="${responseJson}" class="img-result">'
     )
