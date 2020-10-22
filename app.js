@@ -5,21 +5,23 @@ function getDogImage (images) {
         .catch(error => alert ('Something went wrong. Try again later'));
 }
 
-
-
 function onSubmit () {
     $('form').on('submit', event => {
         event.preventDefault();
-        let images = $('input [type="radio"]').val();   
-        getDogImage(images);  
-    })
+        let numberOfImages = $('input[type="number"]').val();  
+        console.log(numberOfImages); 
+        getDogImage(numberOfImages);  
+    });
 }
 
 function displayImages(responseJson) {
     console.log(responseJson);
+    let i = 0;
+    for (let i = 0; i <= responseJson.length; i++) {
+        $('#target').replaceWith('<img src="${responseJson.message[i]}" class="results-img">')
+        };
     $('.results').removeClass('hidden');
-
-}
+};
 
 function handler() {
     onSubmit();
