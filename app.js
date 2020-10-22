@@ -1,15 +1,14 @@
-function getDogImage (images) {
+function getDogImage(images) {
     fetch('https://dog.ceo/api/breeds/image/random/'+images)
         .then(response => response.json())
         .then(responseJson => displayImages(responseJson))
         .catch(error => alert ('Something went wrong. Try again later'));
 }
 
-function onSubmit () {
+function onSubmit() {
     $('form').on('submit', event => {
         event.preventDefault();
         let numberOfImages = $('input[type="number"]').val();  
-        console.log(numberOfImages); 
         getDogImage(numberOfImages);  
     });
 }
