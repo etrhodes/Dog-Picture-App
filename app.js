@@ -18,7 +18,7 @@ function displayImages(responseJson) {
     console.log(responseJson);
     let i = 0;
     for (let i = 0; i <= responseJson.length; i++) {
-        $('#target').replaceWith('<img src="${responseJson.message[i]}" class="results-img">')
+        $('#target').('<img src="${responseJson.message[i]}" class="results-img">')
         };
     $('.results').removeClass('hidden');
 };
